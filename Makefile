@@ -5,6 +5,7 @@ default:
 
 .PHONY: build
 build:
+	rm -rf ./build
 	mkdir -p build/jazip-${VERSION}
 	dart2native bin/main.dart -o build/jazip-${VERSION}/jazip
-	tar -zcvf build/jazip-${VERSION}.tar.gz build/jazip-${VERSION}
+	tar -czvf build/jazip-${VERSION}.tar.gz -C build jazip-${VERSION}
